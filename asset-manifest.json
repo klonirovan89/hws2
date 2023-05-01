@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/klonirovan89/hws2/static/css/main.736f547d.css",
+    "main.js": "/klonirovan89/hws2/static/js/main.3716e5bc.js",
+    "static/js/787.66cb4309.chunk.js": "/klonirovan89/hws2/static/js/787.66cb4309.chunk.js",
+    "static/media/avatar.png": "/klonirovan89/hws2/static/media/avatar.d947cb9d0d13765666b6.png",
+    "index.html": "/klonirovan89/hws2/index.html",
+    "main.736f547d.css.map": "/klonirovan89/hws2/static/css/main.736f547d.css.map",
+    "main.3716e5bc.js.map": "/klonirovan89/hws2/static/js/main.3716e5bc.js.map",
+    "787.66cb4309.chunk.js.map": "/klonirovan89/hws2/static/js/787.66cb4309.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.736f547d.css",
+    "static/js/main.3716e5bc.js"
+  ]
+}
