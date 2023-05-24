@@ -29,7 +29,6 @@ export const pureAddUserCallback = (name: string, setUsers: (users: UserType[]) 
         name: name// need to fix
     }
     setUsers([...users, user])
-    console.log(users)
 }
 
 const HW3 = () => {
