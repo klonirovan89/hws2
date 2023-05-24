@@ -56,16 +56,3 @@
     padding: 0 0.625rem;
 }
 
-@media (max-width: 47.99875em) {
-    .text {
-        max-width: 100%;
-    }
-
-    .name {
-        font-size: 0.875rem;
-    }
-
-    .messageText {
-        font-size: 0.75rem;
-    }
-}

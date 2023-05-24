@@ -15,21 +15,19 @@ import avatar from './avatar.png'
 
 // нужно создать правильный тип вместо any
 export type MessageType = {
-    id: number;
-    user: UserType;
-    message:  messageType;
-    }
+    id: number,
+    user: UserPropsType,
+    message: messageType
+}
 
-export type UserType = {
-    avatar: string;
-    name: string;
-
+export type UserPropsType = {
+    avatar: string, // можно менять
+    name: string  // можно менять
 }
 
 export type messageType = {
-    text: string;
-    time: string;
-
+    text: string, // можно менять
+    time: string // можно менять
 }
 
 // структуру объекта не менять
@@ -40,7 +38,7 @@ export const message0: MessageType = {
         name: 'Pasha',  // можно менять
     },
     message: {
-        text: 'Hello Misha!', // можно менять
+        text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
         time: '22:00', // можно менять
     },
 }
@@ -51,8 +49,8 @@ export const friendMessage0: MessageType = {
         name: 'Misha', // можно менять
     },
     message: {
-        text: 'Hello Pasha!', // можно менять
-        time: '22:01', // можно менять
+        text: 'зеркальное сообщение для тренировки css', // можно менять
+        time: '22:00', // можно менять
     },
 }
 
@@ -63,12 +61,12 @@ const HW1 = () => {
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
-                    <Message message={message0} />
-                    <FriendMessage message={friendMessage0} />
+                    <Message message={message0}/>
+                    <FriendMessage message={friendMessage0}/>
                 </div>
 
                 {/*для автоматической проверки дз (не менять)*/}
-                <MessageSender M={Message} />
+                <MessageSender M={Message}/>
             </div>
         </div>
     )

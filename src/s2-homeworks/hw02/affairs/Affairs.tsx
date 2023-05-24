@@ -1,45 +1,43 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Affair from './affair/Affair'
 import {AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    data: AffairType[] // need to fix any
-    setFilter: (filter: FilterType) => void
-    deleteAffairCallback: (_id: number) => void
+    data: AffairType[], // need to fix any
+    setFilter: (filter: FilterType) => void,
+    deleteAffairCallback: (_id: number) => void,
     filter: FilterType
 }
-export const Affairs: React.FC<AffairsPropsType> = ({data, setFilter, deleteAffairCallback, filter}) => {
-    const [switcher, setSwitcher] = useState<boolean>(false)
 
-    const allOrPriority = (bool: boolean): string => bool ? `${s.affairs} ${s.affairsNoWrap}` : s.affairs
+function Affairs(props: AffairsPropsType) {
     const setAll = () => {
-        setFilter('all')
-        setSwitcher(false)
-    }
-    const setLow = () => {
-        setFilter('low')
-        setSwitcher(true)
-    }
-    const setMiddle = () => {
-        setFilter('middle')
-        setSwitcher(true)
+        props.setFilter( 'all')
     }
     const setHigh = () => {
-        setFilter('high')
-        setSwitcher(true)
+        props.setFilter( 'high')
+        // need to fix
+    }
+    const setMiddle = () => {
+        props.setFilter( 'middle')
+
+        // need to fix
+    }
+    const setLow = () => {
+        props.setFilter( 'low')
+        // need to fix
     }
 
-    const cnAll = s.button + ' ' + s.all + (filter === 'all' ? ' ' + s.active : '')
-    const cnHigh = s.button + ' ' + s.high + (filter === 'high' ? ' ' + s.active : '')
-    const cnMiddle = s.button + ' ' + s.middle + (filter === 'middle' ? ' ' + s.active : '')
-    const cnLow = s.button + ' ' + s.low + (filter === 'low' ? ' ' + s.active : '')
+    const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
+    const cnHigh = s.button + ' ' + s.high + (props.filter === 'high' ? ' ' + s.active : '')
+    const cnMiddle = s.button + ' ' + s.middle + (props.filter === 'middle' ? ' ' + s.active : '')
+    const cnLow = s.button + ' ' + s.low + (props.filter === 'low' ? ' ' + s.active : '')
 
-    const mappedAffairs = data.map(affair => (
+    const mappedAffairs = props.data.map((a: AffairType) => (
         <Affair
-            key={affair._id}
-            affair={affair}
-            deleteAffairCallback={deleteAffairCallback}
+            key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
+            affair={a}
+            deleteAffairCallback={props.deleteAffairCallback}
         />
     ))
 
@@ -52,13 +50,6 @@ export const Affairs: React.FC<AffairsPropsType> = ({data, setFilter, deleteAffa
                     className={cnAll}
                 >
                     All
-                </button>
-                <button
-                    id={'hw2-button-low'}
-                    onClick={setLow}
-                    className={cnLow}
-                >
-                    Low
                 </button>
                 <button
                     id={'hw2-button-high'}
@@ -74,8 +65,15 @@ export const Affairs: React.FC<AffairsPropsType> = ({data, setFilter, deleteAffa
                 >
                     Middle
                 </button>
+                <button
+                    id={'hw2-button-low'}
+                    onClick={setLow}
+                    className={cnLow}
+                >
+                    Low
+                </button>
             </div>
-            <div className={allOrPriority(switcher)}>{mappedAffairs}</div>
+            <div className={s.affairs}>{mappedAffairs}</div>
         </div>
     )
 }
