@@ -39,3 +39,4 @@ export const HW3: React.FC = () => {
         </div>
     )
 }
+export default HW3;
