@@ -23,10 +23,10 @@ export const HW6 = () => {
 
     return (
         <div id={'hw6'}>
-            <div className={s2.hwTitle}>Homework #6</div>
+            <div className={s2.hw6Title}>Homework #6</div>
 
             {/*демонстрация возможностей компоненты:*/}
-            <div className={`${s2.hw} ${s2.hw_6}`}>
+
                 <div className={s.editableSpanContainer}>
                     <SuperEditableSpan
                         id={'hw6-spanable-input'}
@@ -34,7 +34,7 @@ export const HW6 = () => {
                         onChangeText={setValue}
                         spanProps={{
                             id: 'hw6-editable-span',
-                            defaultText: 'enter text...',
+                            defaultText: 'Edit text',
                         }}
                     />
                 </div>
@@ -52,7 +52,7 @@ export const HW6 = () => {
                     </SuperButton>
                 </div>
             </div>
-        </div>
+
     )
 }
 

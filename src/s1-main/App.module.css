@@ -5,8 +5,11 @@
 
 .hw {
 
+
 }
 
-.hwTitle {
-padding: 100px;
+.hw6Title {
+    size: 22px;
+    font-weight: bold;
+    padding: 150px 30px 30px;
 }
