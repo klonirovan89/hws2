@@ -22,20 +22,21 @@ const HW7 = () => {
 console.log(value)
     return (
         <div id={'hw7'}>
-            <div className={s2.hwTitle}>Homework #7</div>
+            <div className={s.hw7Title}>Homework #7</div>
 
             {/*демонстрация возможностей компонент:*/}
             <div className={s2.hw}>
                 <div className={s.container}>
-                    <div>
+                    <div >
                         <SuperSelect
+
                             id={'hw7-super-select'}
                             options={arr}
                             value={value}
                             onChangeOption={onChangeOption}
                         />
                     </div>
-                    <div>
+                    <div className={s.superRadio}>
                         <SuperRadio
                             id={'hw7-super-radio'}
                             name={'hw7-radio'}

@@ -1,2 +1,18 @@
 .container {
+    display: flex;
+    max-width: 26.25em;
+    gap: 1rem;
+
+}
+
+.hw7Title {
+    size: 22px;
+    font-weight: bold;
+    padding: 30px 30px 30px;
+}
+
+.superRadio {
+    display: flex;
+    flex-direction: column;
+
 }
