@@ -16,12 +16,13 @@ const HW11 = () => {
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
     const change = (event: Event, value: number | number[]) => {
-        // если пришёл массив - сохранить значения в оба useState, иначе в первый
+        // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
         if (Array.isArray(value)) {
             setValue1(value[0])
-            value[1] > value[0] && setValue2(value[1])
+            setValue2(value[1])
         } else {
-            value < value2 && setValue1(value)
+            setValue1(value)
+
         }
     }
 
@@ -29,28 +30,27 @@ const HW11 = () => {
         <div id={'hw11'}>
             <div className={s2.hwTitle}>Homework #11</div>
 
-            <div className={`${s2.hw} ${s2.hw_11}`}>
+            <div className={s2.hw}>
                 <div className={s.container}>
                     <div className={s.wrapper}>
                         <span id={'hw11-value'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-single-slider'}
-                            value={value1}
-                            // value 1 изменяется
+                            // сделать так чтоб value1 изменялось // пишет студент
                             onChange={change}
+                            value={value1}
                         />
                     </div>
                     <div className={s.wrapper}>
                         <span id={'hw11-value-1'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-double-slider'}
-                            value={[value1, value2]}
-                            // value1/2 изменяются
+                            // сделать так чтоб value1/2 изменялось // пишет студент
                             onChange={change}
+                            value={[value1, value2]}
                         />
-                        <div id={'hw11-value-2'} className={s.number}>{value2}</div>
+                        <span id={'hw11-value-2'} className={s.number}>{value2}</span>
                     </div>
-
                 </div>
             </div>
         </div>
