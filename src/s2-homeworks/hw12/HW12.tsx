@@ -46,7 +46,6 @@ const HW12 = () => {
                     className={s.select}
                     options={themes}
                     onChangeOption={change}
-
                 />
             </div>
         </div>
