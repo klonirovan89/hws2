@@ -1,4 +1,6 @@
 import React from 'react'
+// import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 // добавить в проект иконки и импортировать
 const downIcon = '[\\/]'
@@ -13,8 +15,15 @@ export type SuperSortPropsType = {
 }
 
 export const pureChange = (sort: string, down: string, up: string) => {
+    if (sort === '') {
+        return down
+    } else if (sort === down) {
+        return up
+    } else if (sort === up) {
+        return ''
+    }
     // пишет студент, sort: (click) => down (click) => up (click) => '' (click) => down ...
-    return up // исправить
+    return down // исправить
 }
 
 const SuperSort: React.FC<SuperSortPropsType> = (
@@ -34,6 +43,8 @@ const SuperSort: React.FC<SuperSortPropsType> = (
         : sort === up
             ? upIcon
             : noneIcon
+
+    console.log(sort, icon)
 
     return (
         <span
