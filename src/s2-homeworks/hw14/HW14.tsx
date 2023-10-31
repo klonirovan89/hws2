@@ -35,21 +35,24 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 // делает студент
-
+                // console.log(res.data.techs)
+                setTechs(res ? res.data.techs : [])
                 // сохранить пришедшие данные
 
                 //
+            })
+            .finally(()=>{
+                setLoading(false)
             })
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
-
         // добавить/заменить значение в квери урла
-        // setSearchParams(
-
-        //
+        setSearchParams({
+            find: value
+        })
     }
 
     useEffect(() => {
